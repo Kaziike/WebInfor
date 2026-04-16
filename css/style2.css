@@ -7,13 +7,10 @@
   display: flex;
   background: white;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  max-width: 370px;
+  max-width: 450px;
   border-radius: 5%;
 }
-.button{
-  text-align: right;
-  
-}
+
 form input{
   width: 200px;
 }
@@ -21,7 +18,15 @@ h3{
   text-align: center;
 }
 .a{
-  display: flex;
+  text-align: right;
+  
+}
+form button{
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 2px 0px;
 }
 
 
