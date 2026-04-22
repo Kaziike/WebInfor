@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
+	<link rel="stylesheet"href="../css/style5.css">
+</head>
+<body>
+
+<h2>In bảng cửu chương</h2>
+
+<input type="number" id="so" min="2" max="9" placeholder="Nhập số (2-9)">
+<button onclick="inBang()">Hiện Bảng Cỉu Chương Lên</button>
+
+<div id="ketqua"></div>
+
+<script>
+function inBang() {
+    let n = document.getElementById("so").value;
+    let kq = "";
+
+    if (n < 2 || n > 9) {
+        kq = "Vui lòng nhập số từ 2 đến 9!";
+    } else {
+        kq += "<b>Bảng " + n + "</b><br>";
+        for (let i = 1; i <= 10; i++) {
+            kq += n + " x " + i + " = " + (n * i) + "<br>";
+        }
+    }
+
+    document.getElementById("ketqua").innerHTML = kq;
+}
+</script>
+
+</body>
+</html>
