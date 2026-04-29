@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Sản Phẩm</title>
+    <link rel="stylesheet" href="../css/style7.css">
+
+</head>
+
+<body>
+    <div>
+        <input type="button" value="Thêm" onclick="add()">
+        <input type="button" value="Xóa" onclick="remove()">
+        <input type="button" value="Thêm Từ Người Dùng" onclick="add2user()">
+        <input type="button" value="Tải Tất Cả Sản Phẩm" onclick="loadAllProducts()">
+        
+
+    </div>
+    <div class="container">
+    </div>
+    <script src="lib7.js" defer></script>
+</body>
+<script>
+    function add() {
+        // Create a new product item
+        const myDiv = document.createElement("div");
+        myDiv.setAttribute("class", "product-item");
+        const myIMG = document.createElement("div");
+        myIMG.setAttribute("class", "product-image");
+        const myInfo = document.createElement("div");
+        myInfo.setAttribute("class", "product-info");
+
+        // Add an image
+        const productIMG = document.createElement("img");
+        productIMG.setAttribute("src","../assets/images/t14.jpg");
+        productIMG.setAttribute("alt","Product Image");
+        myIMG.appendChild(productIMG);
+
+        // Add some info, e.g., name and price
+        const productName = document.createElement("h3");
+        productName.textContent = "Xe Tank T14 Armata";
+        const productPrice = document.createElement("p");
+        productPrice.textContent = "7M USD";
+        const productDescription = document.createElement("a");
+        productDescription.textContent = "Xe tăng chiến đấu chủ lực hiện đại nhất của Nga, được thiết kế để đối phó với các mối đe dọa trên chiến trường hiện đại.";
+
+
+
+        myInfo.appendChild(productName);
+        myInfo.appendChild(productDescription);
+        myInfo.appendChild(productPrice);
+        
+
+        myDiv.appendChild(myIMG);
+        myDiv.appendChild(myInfo);
+        // Append the new product item to the container
+        document.querySelector(".container").appendChild(myDiv);    
+    }
+    function remove() {
+        const container = document.querySelector(".container");
+        if (container.lastChild) {
+            container.removeChild(container.lastChild);
+        }
+    }
+    function add2user(){
+        // Create a new product item
+        const myDiv = document.createElement("div");
+        myDiv.setAttribute("class", "product-item");
+        const myIMG = document.createElement("div");
+        myIMG.setAttribute("class", "product-image");
+        const myInfo = document.createElement("div");
+        myInfo.setAttribute("class", "product-info");
+
+        // Add an image
+        
+
+
+        // add from user input
+        const productName = document.createElement("h3");
+        const productPrice = document.createElement("p");
+        const productDescription = document.createElement("a");
+        productName.textContent = prompt("Nhập tên sản phẩm:");
+        productPrice.textContent = prompt("Nhập giá sản phẩm:");
+        productDescription.textContent = prompt("Nhập mô tả sản phẩm:");
+        myInfo.appendChild(productName);
+        myInfo.appendChild(productDescription);
+        myInfo.appendChild(productPrice);
+        myDiv.appendChild(myIMG);
+        myDiv.appendChild(myInfo);
+        document.querySelector(".container").appendChild(myDiv);
+    }
+    function addProduct(){
+
+    }
+    function loadAllProducts(){
+        
+    }
+</script>
+
+</html>
+
+
+
+
