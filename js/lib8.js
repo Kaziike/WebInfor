@@ -31,15 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const id = urlParams.get('id');
 
     if (id) {
-        // Show detail view
         document.getElementById('list-view').style.display = 'none';
         document.getElementById('detail-view').style.display = 'flex';
         
-        // Array.find() from sketch
         const product = productList.find(p => p.id === id);
-        
         if (product) {
-            // Update DOM properties from sketch (id="p-image" src, p-description innerHTML, etc.)
             document.getElementById("p-image").src = product.img;
             document.getElementById("p-name").textContent = product.name;
             document.getElementById("p-price").textContent = product.price;
@@ -48,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("detail-view").innerHTML = "<p>Sản phẩm không tồn tại.</p>";
         }
     } else {
-        // Show list view to generate the "Xem chi tiết" links
         document.getElementById('detail-view').style.display = 'none';
         const listView = document.getElementById('list-view');
         listView.style.display = 'flex';
@@ -74,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const link = document.createElement("a");
             link.textContent = "Xem chi tiết";
-            // setAttribute from sketch: setAttribute("href", productLink + "?id=" + id)
             link.setAttribute("href", product.productLink + "?id=" + product.id);
             link.style.display = "inline-block";
             link.style.marginTop = "10px";

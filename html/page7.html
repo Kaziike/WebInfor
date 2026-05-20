@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <title>Danh Sách Sản Phẩm</title>
     <link rel="stylesheet" href="../css/style7.css">
-
+    <script src="../js/lib7.js"></script>
 </head>
 
 <body>
@@ -13,12 +14,12 @@
         <input type="button" value="Xóa" onclick="remove()">
         <input type="button" value="Thêm Từ Người Dùng" onclick="add2user()">
         <input type="button" value="Tải Tất Cả Sản Phẩm" onclick="loadAllProducts()">
-        
+
 
     </div>
     <div class="container">
     </div>
-    <script src="lib7.js" defer></script>
+
 </body>
 <script>
     function add() {
@@ -32,8 +33,8 @@
 
         // Add an image
         const productIMG = document.createElement("img");
-        productIMG.setAttribute("src","../assets/images/t14.jpg");
-        productIMG.setAttribute("alt","Product Image");
+        productIMG.setAttribute("src", "../assets/images/t14.jpg");
+        productIMG.setAttribute("alt", "Product Image");
         myIMG.appendChild(productIMG);
 
         // Add some info, e.g., name and price
@@ -49,12 +50,12 @@
         myInfo.appendChild(productName);
         myInfo.appendChild(productDescription);
         myInfo.appendChild(productPrice);
-        
+
 
         myDiv.appendChild(myIMG);
         myDiv.appendChild(myInfo);
         // Append the new product item to the container
-        document.querySelector(".container").appendChild(myDiv);    
+        document.querySelector(".container").appendChild(myDiv);
     }
     function remove() {
         const container = document.querySelector(".container");
@@ -62,7 +63,7 @@
             container.removeChild(container.lastChild);
         }
     }
-    function add2user(){
+    function add2user() {
         // Create a new product item
         const myDiv = document.createElement("div");
         myDiv.setAttribute("class", "product-item");
@@ -72,7 +73,10 @@
         myInfo.setAttribute("class", "product-info");
 
         // Add an image
-        
+        const productIMG = document.createElement("img");
+        productIMG.setAttribute("src", prompt("Nhập đường dẫn ảnh:"));
+        productIMG.setAttribute("alt", "Product Image");
+        myIMG.appendChild(productIMG);
 
 
         // add from user input
@@ -89,16 +93,7 @@
         myDiv.appendChild(myInfo);
         document.querySelector(".container").appendChild(myDiv);
     }
-    function addProduct(){
 
-    }
-    function loadAllProducts(){
-        
-    }
 </script>
 
 </html>
-
-
-
-
